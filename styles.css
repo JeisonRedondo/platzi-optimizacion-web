@@ -98,13 +98,13 @@ ul:hover {
   text-decoration: underline;
 }
 
-.menu > div {
+.menu>div {
   align-items: center;
   display: flex;
   cursor: pointer;
 }
 
-.menu > div > img {
+.menu>div>img {
   margin-right: 8px;
   width: 40px;
 }
@@ -146,10 +146,12 @@ footer {
   margin-top: 4rem;
   margin-bottom: 3rem;
 }
+
 footer p {
   margin: 0.5rem;
   color: #22046f;
 }
+
 footer i {
   border-bottom: 1px dashed;
 }
@@ -181,7 +183,7 @@ footer a:hover {
   position: relative;
 }
 
-.carousel > div {
+.carousel>div {
   font-size: 0;
   white-space: nowrap;
   margin: 70px 0px;
@@ -189,6 +191,7 @@ footer a:hover {
 }
 
 .carousel-item {
+  will-change: transform;
   border-radius: 20px;
   position: relative;
   display: inline-block;
@@ -199,23 +202,44 @@ footer a:hover {
   cursor: pointer;
   transition: 450ms all;
   transform-origin: center left;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
+
+.carousel-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+  opacity: 0.4;
+  transition: 450ms all;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 40%);
+}
+
 /* Change opacity to all items but current */
-.carousel > div:hover .carousel-item:not(:hover) {
+
+.carousel>div:hover .carousel-item:not(:hover) {
   opacity: 0.3;
 }
+
 /* Scale up current */
 .carousel-item:hover {
   transform: scale(1.5);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
-}
-/* Move subsecuent item */
-.carousel-item:hover + .carousel-item {
-  margin-left: 100px;
 }
 
-.carousel-item > img {
+.carousel-item:hover:before {
+  /* animation */
+  opacity: 1;
+}
+
+/* Move subsecuent item */
+.carousel-item:hover+.carousel-item {
+  /* margin-left: 100px; */
+  transform: translateX(-100px);
+}
+
+.carousel-item>img {
   width: 200px;
   height: 250px;
   object-fit: cover;
@@ -223,15 +247,13 @@ footer a:hover {
   border-radius: 20px;
 }
 
-.carousel-item > div {
+.carousel-item>div {
   overflow: hidden;
   border-radius: 20px;
   align-items: flex-start;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0) 100%);
   bottom: 0;
   display: flex;
   font-size: 10px;
@@ -245,29 +267,31 @@ footer a:hover {
   right: 0;
   top: 0;
 }
-.carousel-item:hover > div {
+
+.carousel-item:hover>div {
   opacity: 1;
 }
 
-.carousel-item > div > div a > img {
+.carousel-item>div>div a>img {
   width: 20px;
 }
 
 /* Title */
-.carousel-item > div > p:nth-of-type(1) {
+.carousel-item>div>p:nth-of-type(1) {
   color: white;
   margin: 5px 0px 0px 0px;
 }
+
 /* Subtitle */
-.carousel-item > div > p:nth-of-type(2) {
+.carousel-item>div>p:nth-of-type(2) {
   color: white;
   font-size: 7px;
   margin: 3px 0px;
 }
+
 /* Date */
-.carousel-item > div > p:nth-of-type(3) {
+.carousel-item>div>p:nth-of-type(3) {
   color: white;
   font-size: 6px;
   margin: 0px;
 }
-
