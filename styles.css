@@ -58,19 +58,14 @@ header {
 
 .logo {
   margin-left: 30px;
-  width: 200px;
-  height: 61px;
-  background-image: url(/assets/logo-platzi-video.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+ 
 }
 
 .menu {
   margin-right: 30px;
 }
 
-.menu ul {
+.menu--list__account {
   display: none;
   list-style: none;
   margin: 0px 0px 0px -14px;
@@ -80,31 +75,32 @@ header {
   text-align: right;
 }
 
-.menu:hover ul,
-ul:hover {
+.menu:hover .menu--list__account,
+.menu--list__account:hover {
   display: block;
 }
 
-.menu li {
+.list__account--item__list{
   margin: 10px 0px;
 }
 
-.menu li a {
+.list__account--item__list a {
   color: white;
   text-decoration: none;
 }
 
-.menu li a:hover {
+.list__account--item__list a:hover {
   text-decoration: underline;
 }
 
-.menu>div {
+/* perfil__container */
+.menu--perfil__container {
   align-items: center;
   display: flex;
   cursor: pointer;
 }
 
-.menu>div>img {
+.menu--perfil__container>img {
   margin-right: 8px;
   width: 40px;
 }
@@ -122,12 +118,12 @@ ul:hover {
   overflow-x: visible;
 }
 
-.main h2 {
+#main--title {
   color: white;
   font-size: 24px;
 }
 
-body .main .search-input {
+#main--search__input {
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid white;
   border-radius: 25px;
@@ -183,7 +179,7 @@ footer a:hover {
   position: relative;
 }
 
-.carousel>div {
+.carousel--container {
   font-size: 0;
   white-space: nowrap;
   margin: 70px 0px;
@@ -219,7 +215,7 @@ footer a:hover {
 
 /* Change opacity to all items but current */
 
-.carousel>div:hover .carousel-item:not(:hover) {
+.carousel--container:hover .carousel-item:not(:hover) {
   opacity: 0.3;
 }
 
@@ -236,10 +232,10 @@ footer a:hover {
 /* Move subsecuent item */
 .carousel-item:hover+.carousel-item {
   /* margin-left: 100px; */
-  transform: translateX(-100px);
+  transform: translateX(100px);
 }
-
-.carousel-item>img {
+/* carousel-item--poster */
+.carousel-item--poster {
   width: 200px;
   height: 250px;
   object-fit: cover;
@@ -247,7 +243,7 @@ footer a:hover {
   border-radius: 20px;
 }
 
-.carousel-item>div {
+.carousel-item--references {
   overflow: hidden;
   border-radius: 20px;
   align-items: flex-start;
@@ -268,29 +264,30 @@ footer a:hover {
   top: 0;
 }
 
-.carousel-item:hover>div {
+.carousel-item:hover>.carousel-item--references {
   opacity: 1;
 }
 
-.carousel-item>div>div a>img {
+/* card__controls */
+.card__controls {
   width: 20px;
 }
 
 /* Title */
-.carousel-item>div>p:nth-of-type(1) {
+.references--title {
   color: white;
   margin: 5px 0px 0px 0px;
 }
 
 /* Subtitle */
-.carousel-item>div>p:nth-of-type(2) {
+.references--subtitle {
   color: white;
   font-size: 7px;
   margin: 3px 0px;
 }
 
 /* Date */
-.carousel-item>div>p:nth-of-type(3) {
+.references--Realesed {
   color: white;
   font-size: 6px;
   margin: 0px;

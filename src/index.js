@@ -8,7 +8,7 @@ const Carousel = ({ itemsList = [] }) =>
   h(
     'section.carousel',
     h(
-      'div',
+      'div.carousel--container',
       itemsList.map(
         ({
           attributes: { titles, posterImage, slug, youtubeVideoId, startDate },
