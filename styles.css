@@ -108,7 +108,7 @@ header {
   cursor: pointer;
 }
 
-.menu--perfil__container>img {
+.menu--perfil__container>svg {
   margin-right: 8px;
   width: 40px;
 }
