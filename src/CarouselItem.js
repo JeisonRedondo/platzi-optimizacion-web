@@ -17,7 +17,7 @@ const Controls = ({ slug, youtubeVideoId }) =>
       h('img.card__controls', {
         src: 'assets/play-icon.png',
         alt: 'Play',
-       
+
       })
     ),
     h(
@@ -45,7 +45,7 @@ const CarouselItem = ({
 }) =>
   h(
     'div.carousel-item',
-    h('img.carousel-item--poster', { src: imageUrl, alt: '' }),
+    h('img.carousel-item--poster', { src: imageUrl, alt: '', loading: 'lazy' }),
     h(
       'div.carousel-item--references',
       Controls({ slug, youtubeVideoId }),
