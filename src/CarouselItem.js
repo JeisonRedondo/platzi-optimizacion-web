@@ -1,5 +1,6 @@
 import h from 'hyperscript'
 import moment from 'moment'
+import 'lazysizes';
 
 const relativeDate = dateStr => moment(dateStr, 'YYYY-MM-DD').fromNow()
 
@@ -45,7 +46,7 @@ const CarouselItem = ({
 }) =>
   h(
     'div.carousel-item',
-    h('img.carousel-item--poster', { src: imageUrl, alt: '', loading: 'lazy' }),
+    h('img.carousel-item--poster.lazyload', { 'data-src': imageUrl, alt: '', }),
     h(
       'div.carousel-item--references',
       Controls({ slug, youtubeVideoId }),
