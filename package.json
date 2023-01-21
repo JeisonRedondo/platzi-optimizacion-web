@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack --mode production --env production",
+    "serve": " serve ."
   },
   "prettier": {
     "trailingComma": "es5",
@@ -32,6 +33,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "lazysizes": "^5.3.2"
+    "lazysizes": "^5.3.2",
+    "serve": "^14.1.2"
   }
 }
