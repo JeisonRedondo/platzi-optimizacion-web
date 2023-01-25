@@ -1,4 +1,5 @@
-import _ from 'lodash'
+// tree shaking
+import get from 'lodash/get'
 
 const BASE_URL = 'https://kitsu.io/api/edge'
 const PER_PAGE = 7
@@ -15,7 +16,7 @@ const checkStatus = response => {
 
 const toJson = response => response.json()
 
-const extractData = json => _.get(json, 'data', [])
+const extractData = json => get(json, 'data', [])
 
 const request = (endpoint = '') =>
   fetch(`${BASE_URL}${endpoint}`)
