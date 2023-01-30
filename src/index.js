@@ -63,10 +63,15 @@ window.addEventListener('DOMContentLoaded', async () => {
   // const observer = lozad(carouselImages);
   // observer.observe()
 
-  const allYoutubeLinks = document.querySelectorAll('.js-video-link')
-  allYoutubeLinks.forEach((link) => {
-    link.addEventListener('click', modalListener)
+  document.body.addEventListener('click', (event) => {
+    // console.log(event.target.tagName);
+
+    const tagName = event.target.tagName
+    if (['IMG', 'A'].includes(tagName)) {
+      modalListener(event)
+    }
+
   })
 
-})(document, window)
+})
 

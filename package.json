@@ -22,11 +22,13 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^5.2.6",
     "husky": "^4.2.3",
     "hyperscript": "^2.0.2",
     "lodash": "^4.17.15",
     "prettier": "1.19.1",
     "pretty-quick": "^2.0.1",
+    "style-loader": "^2.0.0",
     "webpack": "^4.42.0",
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^3.3.11",
@@ -35,6 +37,7 @@
   "dependencies": {
     "date-fns": "^2.29.3",
     "lazysizes": "^5.3.2",
+    "modal-video": "^2.4.8",
     "serve": "^14.1.2"
   }
 }

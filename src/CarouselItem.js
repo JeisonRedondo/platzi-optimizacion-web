@@ -13,6 +13,7 @@ const Controls = ({ slug, youtubeVideoId }) =>
       'a.js-video-link',
       {
         href: `https://www.youtube.com/watch?v=${youtubeVideoId}`,
+        'data-videoId' : youtubeVideoId,
         title: 'Watch trailer',
         target: '_blank',
         rel: 'noreferrer',
