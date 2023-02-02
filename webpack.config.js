@@ -1,8 +1,15 @@
-const webpack = require('webpack')
 const path = require('path')
 const shouldAnalyze = process.argv.includes('--analyze')
 
 const nodeEnv = process.env.NODE_ENV || 'development'
+const shouldAnalyze = process.argv.includes('--analyze')
+
+const plugins = []
+
+if (shouldAnalyze) {
+  const { BundleAnalyzerPlugin } = module.require('webpack-bundle-analyzer')
+  plugins.push(new BundleAnalyzerPlugin())
+}
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -14,7 +21,15 @@ if (shouldAnalyze) {
 
 const config = {
   mode: nodeEnv,
-  entry: './src/index.js',
+  entry: './frontend/index.js',
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
@@ -24,19 +39,6 @@ const config = {
     contentBase: '.',
   },
   plugins,
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use:['style-loader', 'css-loader']
-      },
-    ],
-  },
 }
 
 module.exports = config
