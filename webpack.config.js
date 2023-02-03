@@ -1,10 +1,7 @@
 const path = require('path')
-const shouldAnalyze = process.argv.includes('--analyze')
 
 const nodeEnv = process.env.NODE_ENV || 'development'
 const shouldAnalyze = process.argv.includes('--analyze')
-
-const plugins = []
 
 if (shouldAnalyze) {
   const { BundleAnalyzerPlugin } = module.require('webpack-bundle-analyzer')
