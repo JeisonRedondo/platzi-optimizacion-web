@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run serve",
     "dev": "concurrently \"webpack -w\" \"micro-dev\"",
-    "build": "webpack --mode production --env production",
+    "build": "webpack -p",
     "serve": "micro"
   },
   "prettier": {
