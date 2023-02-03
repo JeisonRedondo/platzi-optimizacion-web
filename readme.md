@@ -2,6 +2,8 @@
 
 Curso de optimización web dictado por [@jonalvarezz](https://twitter.com/jonalvarezz) para [Platzi](https://platzi.com)
 
+"export NODE_OPTIONS=--openssl-legacy-provider"
+
 ### 🚀 Optimizaciones aplicadas
 
 1. Elimina bloqueo en etiquetas `script`.
