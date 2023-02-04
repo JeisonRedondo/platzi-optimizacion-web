@@ -30,6 +30,10 @@ Como podemos ver este proyecto esta desactualizado, para poder ejecutarlo hace f
 1. Divide el bundle en dos archivos (code splitting)
 1. Aplica lazy load para la librería del modal.
 1. Renderiza el contenido principal desde nuestro propio servidor node (SSR).
+1. Pre-renderiza el contenido principal de forma estática (SSG).
+1. Deploy en Netlify.
+1. Genera el contenido estático cada semana con GitHub Actions.
+1. Guarda assets en el cache del navegador con Service Workers.
 
 ### 🤖 Guía Rápida
 
@@ -59,12 +63,12 @@ Como podemos ver este proyecto esta desactualizado, para poder ejecutarlo hace f
     npm run build
     ```
 
-    El proyecto es una applicación de NodeJS.
+    El sitio podrá ser accedido como un sitio estático.
 
-    La aplicación se puede iniciar con:
+    Un servidor de archivos estático está incluido y se puede iniciar con
 
     ```sh
     npm start
     ```
 
-    El sitio estará disponible en http://localhost:3000.
+    El sitio estará disponible en http://localhost:5000.
